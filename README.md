@@ -316,7 +316,7 @@ If the port is changed, please make sure the `PORT` environment variable and Doc
 <strong>Run in Production</strong>
 
 ```bash
-docker compose -f docker-compose.prod.yml up --build -d
+docker compose -f docker-compose.prod.yml up --build
 ```
 
 #### Access the app

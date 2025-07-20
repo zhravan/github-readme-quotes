@@ -11,7 +11,7 @@ services:
       - /app/node_modules
     ports:
       - "3004:3004"
-      - "5173:5173"
+      - "3000:3000"
     environment:
       - MODE=dev
       - NODE_ENV=DEVELOPMENT

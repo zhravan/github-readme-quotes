@@ -15,7 +15,7 @@ const initiateServer = async () => {
 
   app.use(morgan("dev"));
 
-  if (process.env.NODE_ENV === "production") {
+  if (process.env.NODE_ENV === "PRODUCTION") {
     app.use(express.static(path.join(__dirname, "../", "frontend", "build")));
 
     app.get("/*", (req, res) => {
