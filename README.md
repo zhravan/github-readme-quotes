@@ -1,4 +1,3 @@
-
 <p align="center">
   <img align="center" width="20%" src="assets/uiScreen.gif" alt="logo"/>
   <h2 align="center">Github Readme Quotes: Dynamic quote generator for your GitHub readmes</h2>
@@ -8,7 +7,7 @@
 
 ![alt](https://img.shields.io/badge/license-MIT-green?logo=dark-green) ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-success) ![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github) [![GitHub contributors](https://img.shields.io/github/contributors/shravan20/github-readme-quotes.svg)](https://github.com/shravan20/github-readme-quotes/graphs/contributors) ![Pull Request Counts](https://img.shields.io/bitbucket/pr/shravan20/github-readme-quotes) ![last commit](https://img.shields.io/github/last-commit/shravan20/github-readme-quotes) ![deployment-status](https://img.shields.io/website?url=https%3A%2F%2Fgithub-readme-quotes.herokuapp.com%2Fquote) [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/shravan20/github-readme-quotes/)
 <a href="https://discord.gg/2nN2VqwNaK">
-  <img align="center" src="https://img.shields.io/discord/779439447736451132?label=discord-server&style=flat-square" />
+<img align="center" src="https://img.shields.io/discord/779439447736451132?label=discord-server&style=flat-square" />
 </a>
 
 <br><br>
@@ -20,9 +19,9 @@
 - [x] Project Deployment Status: I have moved it from Heroku to Vercel Cloud now. Please access the content from UI on **[https://github-readme-quotes-returns.vercel.app](https://github-readme-quotes-returns.vercel.app)** and utility on **[https://github-readme-quotes-bay.vercel.app/quote](https://github-readme-quotes-bay.vercel.app/quote)**
 
 - [x] Self-Hosting and Contributions: If you wish to host the project on your own,
-you can fork the repository and deploy it according to your needs. Feel free to reach
-out to me if you require any assistance or have inquiries about the project.
-Your contributions and involvement in the project are welcome.
+      you can fork the repository and deploy it according to your needs. Feel free to reach
+      out to me if you require any assistance or have inquiries about the project.
+      Your contributions and involvement in the project are welcome.
 
 ---
 
@@ -57,14 +56,14 @@ Your contributions and involvement in the project are welcome.
 
 ## Features
 
-| Sl No  | Feature Name  | Description  |
-|:-:|:-:|:-:|
-| 1  | [Dynamic Quotes](#github-readme-quotes-1)  | Different quotes every time its rendered for GitHub Profile Readme  |
-| 2  | [Colorful Themes](#themes)  | Various colorful themes available for cards |
-| 3  | [Design Layouts](#layouts)  | Different Layout design cards are available  |
-| 4  | [Animation](#animations)  | Animations available for quote cards |
-| 5  | [Custom Quotes from GitHub Gists](#custom-quotes)  | You can add custom quotes of your own or own choice from GitHub Gists json files |
-| 6  | [Quotes based on Category](#category-based-quotes)  | Different category based quotes are available |
+| Sl No |                    Feature Name                    |                                   Description                                    |
+| :---: | :------------------------------------------------: | :------------------------------------------------------------------------------: |
+|   1   |      [Dynamic Quotes](#github-readme-quotes)       |        Different quotes every time its rendered for GitHub Profile Readme        |
+|   2   |             [Colorful Themes](#themes)             |                   Various colorful themes available for cards                    |
+|   3   |             [Design Layouts](#layouts)             |                   Different Layout design cards are available                    |
+|   4   |              [Animation](#animations)              |                       Animations available for quote cards                       |
+|   5   | [Custom Quotes from GitHub Gists](#custom-quotes)  | You can add custom quotes of your own or own choice from GitHub Gists json files |
+|   6   | [Quotes based on Category](#category-based-quotes) |                  Different category based quotes are available                   |
 
 ---
 
@@ -82,6 +81,7 @@ Copy and paste the following markdown content to display the quote.
 ```md
 ![Quote](https://github-readme-quotes-bay.vercel.app/quote)
 ```
+
 <!-- Scrnshot of quote in default mode -->
 <p align="center">
   <img src="https://github-readme-quotes-bay.vercel.app/quote"/>
@@ -98,6 +98,7 @@ Use `?theme=THEME_NAME` parameter as shown below.
 ```md
 ![Quote](https://github-readme-quotes-bay.vercel.app/quote?theme=dark)
 ```
+
 <!-- Scrnshot of quote in dark theme -->
 
 #### Available Themes
@@ -181,6 +182,7 @@ Use `?animation=ANIMATION` paramater as shown below
 ```md
 ![Quote](https://github-readme-quotes-bay.vercel.app/quote?theme=dark&animation=grow_out_in)
 ```
+
 <!-- Gif of quote in animation -->
 
 #### Animation 1
@@ -202,11 +204,11 @@ You can also provide a file with the list of quotes and a random quote will be g
 - Get the link of the file.
 - Use `?quotesUrl=URL` as shown below
 
-   ```
+  ```
 
 
-   ![Quote](https://github-readme-quotes-bay.vercel.app/quote?quotesUrl=https://github.com/ShubhKotnala/github-readme-quotes/blob/custom-quotes/customQuotes/quotes.json)
-    ```
+  ![Quote](https://github-readme-quotes-bay.vercel.app/quote?quotesUrl=https://github.com/ShubhKotnala/github-readme-quotes/blob/custom-quotes/customQuotes/quotes.json)
+  ```
 
 ![Quote](https://github-readme-quotes-bay.vercel.app/quote?quotesUrl=https://github.com/ShubhKotnala/github-readme-quotes/blob/custom-quotes/customQuotes/quotes.json)
 
@@ -218,19 +220,19 @@ You can also provide a category to fetch the list of quotes based on certain cat
 
 #### Available Categories
 
-|            |            |            |            |
-|------------|------------|------------|------------|
-| general    | life       | success    | motivational|
-| fun        | programming| dream      | failure    |
-| gaming     | birthday   | Humorous   | Travel     |
+|         |             |          |              |
+| ------- | ----------- | -------- | ------------ |
+| general | life        | success  | motivational |
+| fun     | programming | dream    | failure      |
+| gaming  | birthday    | Humorous | Travel       |
 
 - Use `quoteCategory=categoryName` as shown below
 
-   ```
+  ```
 
 
-    ![Quote](https://github-readme-quotes-bay.vercel.app/quote?quoteCategory=motivational)
-    ```
+   ![Quote](https://github-readme-quotes-bay.vercel.app/quote?quoteCategory=motivational)
+  ```
 
 ![Quote](https://github-readme-quotes-bay.vercel.app/quote?quoteCategory=motivational)
 
@@ -258,7 +260,7 @@ Use `?borderColor=COLOR` paramater as shown below
 ---
 
 - ### Unsplash Background
-You can fetch random background images from [Unsplash](https://unsplash.com/) by specifying two parameters:
+  You can fetch random background images from [Unsplash](https://unsplash.com/) by specifying two parameters:
 
 1. `bgSource=unsplash`
 2. `unsplashQuery=ANY_KEYWORD` (optional)
@@ -292,3 +294,35 @@ To view Swagger docs, run `npm start` and open ![localhost:3002/api-docs](localh
         <img src="https://bytecrank.com/nastyox/reporoster/php/forkersSVG.php?user=shravan20&repo=github-readme-quotes" alt="Forkers repo roster for @shravan20/github-readme-quotes">
     </a>
 </div>
+<hr>
+
+## Running the Project with Docker
+
+<strong>Prerequisites</strong>
+<a href="https://www.docker.com/get-started" target="_blank">Install Docker</a>
+
+<strong>Run in Development</strong>
+
+```bash
+docker compose -f docker-compose.yml up --build
+```
+
+### Access the app
+
+[http://localhost:3004](http://localhost:3004)
+
+If the port is changed, please make sure the `PORT` environment variable and Dockerfile EXPOSE line match accordingly.
+
+<strong>Run in Production</strong>
+
+```bash
+docker compose -f docker-compose.prod.yml up --build
+```
+
+#### Access the app
+
+[http://localhost:3000](http://localhost:3000)
+
+If the port is changed, please make sure the `PORT` environment variable and Dockerfile EXPOSE line match accordingly.
+
+<hr>
