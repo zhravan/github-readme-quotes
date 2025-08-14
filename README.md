@@ -5,7 +5,7 @@
 
 ![banner](./assets/README.png)
 
-![alt](https://img.shields.io/badge/license-MIT-green?logo=dark-green) ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-success) ![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github) [![GitHub contributors](https://img.shields.io/github/contributors/shravan20/github-readme-quotes.svg)](https://github.com/shravan20/github-readme-quotes/graphs/contributors) ![Pull Request Counts](https://img.shields.io/bitbucket/pr/shravan20/github-readme-quotes) ![last commit](https://img.shields.io/github/last-commit/shravan20/github-readme-quotes) ![deployment-status](https://img.shields.io/website?url=https%3A%2F%2Fgithub-readme-quotes.herokuapp.com%2Fquote) [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/shravan20/github-readme-quotes/)
+![alt](https://img.shields.io/badge/license-MIT-green?logo=dark-green) ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-success) ![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github) [![GitHub contributors](https://img.shields.io/github/contributors/zhravan/github-readme-quotes.svg)](https://github.com/zhravan/github-readme-quotes/graphs/contributors) ![Pull Request Counts](https://img.shields.io/bitbucket/pr/zhravan/github-readme-quotes) ![last commit](https://img.shields.io/github/last-commit/zhravan/github-readme-quotes) ![deployment-status](https://img.shields.io/website?url=https%3A%2F%2Fgithub-readme-quotes.herokuapp.com%2Fquote) [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/zhravan/github-readme-quotes/)
 <a href="https://discord.gg/2nN2VqwNaK">
 <img align="center" src="https://img.shields.io/discord/779439447736451132?label=discord-server&style=flat-square" />
 </a>
@@ -281,8 +281,8 @@ To view Swagger docs, run `npm start` and open ![localhost:3002/api-docs](localh
 
 <div>
     <h5><img src="https://user-images.githubusercontent.com/18126719/56791599-0868f980-683a-11e9-8a8b-134ced040c8e.png" width="30"> <em>Huge Shoutout to all the Star-Gazers</em></h5>
-    <a href="https://github.com/shravan20/github-readme-quotes/stargazers">
-        <img src="https://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?user=shravan20&repo=github-readme-quotes" alt="Stargazers repo roster for @shravan20/github-readme-quotes">
+    <a href="https://github.com/zhravan/github-readme-quotes/stargazers">
+        <img src="https://bytecrank.com/nastyox/reporoster/php/stargazersSVG.php?user=zhravan&repo=github-readme-quotes" alt="Stargazers repo roster for @zhravan/github-readme-quotes">
     </a>
 </div>
 
@@ -290,8 +290,8 @@ To view Swagger docs, run `npm start` and open ![localhost:3002/api-docs](localh
 
 <div>
     <h5><img src="https://ghost.org/images/docs/setup/fork.gif" width="30"> <em>Huge Shoutout to all the Forkers</em></h5>
-    <a href="https://github.com/shravan20/github-readme-quotes/network/members">
-        <img src="https://bytecrank.com/nastyox/reporoster/php/forkersSVG.php?user=shravan20&repo=github-readme-quotes" alt="Forkers repo roster for @shravan20/github-readme-quotes">
+    <a href="https://github.com/zhravan/github-readme-quotes/network/members">
+        <img src="https://bytecrank.com/nastyox/reporoster/php/forkersSVG.php?user=zhravan&repo=github-readme-quotes" alt="Forkers repo roster for @zhravan/github-readme-quotes">
     </a>
 </div>
 <hr>
