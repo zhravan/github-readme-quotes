@@ -1,11 +1,11 @@
-# Contributing to [github-readme-quotes](https://github.com/shravan20/github-readme-quotes)
+# Contributing to [github-readme-quotes](https://github.com/zhravan/github-readme-quotes)
 
 Your input is really important for the project. Feel free to contribute to the project whether it be:
 
-- [Reporting an issue](https://github.com/shravan20/github-readme-quotes/issues/new/choose)
-- [Discussing the current state of the code](https://github.com/shravan20/github-readme-quotes/issues/new/choose)
-- [Submitting a fix](https://github.com/shravan20/github-readme-quotes/issues/new/choose)
-- [Proposing new features](https://github.com/shravan20/github-readme-quotes/issues/new/choose)
+- [Reporting an issue](https://github.com/zhravan/github-readme-quotes/issues/new/choose)
+- [Discussing the current state of the code](https://github.com/zhravan/github-readme-quotes/issues/new/choose)
+- [Submitting a fix](https://github.com/zhravan/github-readme-quotes/issues/new/choose)
+- [Proposing new features](https://github.com/zhravan/github-readme-quotes/issues/new/choose)
 
 ## All Changes Happen Through Pull Requests
 
@@ -125,9 +125,9 @@ You can provide fonts data to show the quotes in the font.
 
 In short, when you submit changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
 
-## Report issues/bugs using GitHub's [issues](https://github.com/shravan20/github-readme-quotes/issues)
+## Report issues/bugs using GitHub's [issues](https://github.com/zhravan/github-readme-quotes/issues)
 
-We use GitHub issues to track public bugs or other issues regarding the project. Report an issue by [opening a new issue](https://github.com/shravan20/github-readme-quotes/issues/new/choose); it's that easy!
+We use GitHub issues to track public bugs or other issues regarding the project. Report an issue by [opening a new issue](https://github.com/zhravan/github-readme-quotes/issues/new/choose); it's that easy!
 
 If the issue is a BUG make sure to follow the guidelines provided in the Bug Report.
 
@@ -148,7 +148,7 @@ You can follow the guidelines below for your Bug Report
 
 ### Feature Request
 
-For a new feature request,go to the [issues](https://github.com/shravan20/github-readme-quotes/issues) section and create a feature request.
+For a new feature request,go to the [issues](https://github.com/zhravan/github-readme-quotes/issues) section and create a feature request.
 <br>
 
 You can follow the guidelines below for a new feature request:
