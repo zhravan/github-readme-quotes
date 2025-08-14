@@ -92,7 +92,7 @@
  *           in: query
  *           schema:
  *             type: string
- *           description: The URL of a custom quote. The quote must be uploaded to any public repository using [this](https://github.com/shravan20/github-readme-quotes/blob/main/customQuotes/quotes.json) format.
+ *           description: The URL of a custom quote. The quote must be uploaded to any public repository using [this](https://github.com/zhravan/github-readme-quotes/blob/main/customQuotes/quotes.json) format.
  *         - name: quoteCategory
  *           in: query
  *           schema:
