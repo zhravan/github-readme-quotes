@@ -23,7 +23,9 @@ Use `?layout=LAYOUT` parameter like so :-
 
 - zues (<b>Note</b>: This layout does not have theme customization.) <br>
   ![Quote](https://github-readme-quotes-bay.vercel.app/quote?layout=zues)
-  
+
+- neon <br>
+  ![Quote](https://github-readme-quotes-bay.vercel.app/quote?layout=neon)
 
 Wanted to add a new layout? Consider reading the [contribution guidelines](../CONTRIBUTING.md#themes-contribution) :D
 
