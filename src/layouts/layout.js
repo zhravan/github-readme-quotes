@@ -7,12 +7,12 @@ const layouts = {
                 box-sizing: border-box;
                 }
                 .container {
-                font-family:customFont,Arial,Helvetica,sans-serif;
-                padding: 40px 20px;
+                font-family:cursive;
+                padding: 30px 20px;
                 min-width: 600px;
                 background: ${template.theme.bg_color};
-                border: 1px solid ${template.borderColor};
-                border-radius: 5px;
+                border: 2px solid ${template.borderColor};
+                border-radius: 5px 6px 5px 6px;
                 ${template.animation.animation};
                 }
                 ${template.animation.keyframes}

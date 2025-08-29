@@ -1,4 +1,6 @@
+import customTheme from './customTheme.js'
 const themes = {
+  ...customTheme,
     "algolia": {
       quote_color: "#00AEFF",
       author_color: "#FFFFFF",

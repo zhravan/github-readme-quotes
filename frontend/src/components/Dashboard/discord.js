@@ -20,6 +20,7 @@ const DiscordButton = () => {
                     borderRadius: '5px',
                     border: 'none',
                     cursor: 'pointer',
+                    
                 }}
                 onClick={handleDiscordButtonClick}
             >

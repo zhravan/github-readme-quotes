@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import themes from "../../../util/themes/index.js";
 import {
   Paper,
   TextField,
@@ -15,7 +16,6 @@ import mainAnimations from "../../../util/animation";
 import mainThemes from "../../../util/themes";
 import mainFonts from "../../../util/fonts";
 import { serverUrl } from "../../Constants/urlConfig";
-
 const TemplateCard = (props) => {
   const [showSnackbar, setShowSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
@@ -28,7 +28,7 @@ const TemplateCard = (props) => {
     author: "Open Source",
   };
 
-  const theme = { ...mainThemes[props.theme] };
+  const theme = { ...themes[props.theme] };
   if (props.fontColor) {
     theme.quote_color = props.fontColor;
   }
