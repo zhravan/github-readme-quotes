@@ -31,15 +31,16 @@ const Home = () => {
     const classes = useStyles();
 
     return (
-        <React.Fragment>
+        <React.Fragment >
 
-            <marquee style={{ padding: '10px', borderRadius: '10px', width: '80%', margin: 'auto', textAlign: 'center' }}>
-                <Typography variant='h6' align='center' component='h4' style={{ margin: '20px', padding: '25px', color: '#6e45e2', fontFamily: 'Arial, sans-serif' }}>
+            <marquee style={{ padding: '10px', borderRadius: '40px', width: '80%' , textAlign: 'center' , backgroundColor:'#6C63FF' , margin:'0 100px' , boxShadow:'3px 4px 8px rgba(0,0,0,0.9)'}}>
+                <Typography variant='h6' align='center' component='h4' style={{ margin: '20px', padding: '25px', color: '#fff', fontFamily: 'cursive' ,
+                 }}>
                     🚀 After migrating to Vercel, our application now has separate UI and server deployments for PRODUCTION, while still maintaining server-side rendering locally for DEVELOPMENT. 🚀
                 </Typography>
             </marquee>
 
-            <Typography variant='h5' align='center' component='h2' style={{ margin: '20px', padding: '25px' }}>Make your own personalised style for the Quotes</Typography>
+            <Typography variant='h5' align='center' component='h2' style={{ margin: '20px', padding: '25px' , backgroundColor:'#6C63FF' , borderRadius:'47px 6px 7px 6px' , color:'#fff' , boxShadow:' 3px 3px 8px rgba(0,0,0,0.9)' , fontFamily:'cursive' }}>Make your own personalised style for the Quotes</Typography>
 
             <Grid
                 container

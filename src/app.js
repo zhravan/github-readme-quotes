@@ -40,7 +40,7 @@ async function swaggerDocs(app) {
     definition: {
       openapi: "3.0.0",
       info: {
-        title: "GitHub Readme Quotes",
+        title: "Git Hub Dynamic Quotes For Readme ",
         version: "1.9.0",
         description:
           "Dynamic quote generator for your GitHub readmes | Give a poetic touch to readmes",

@@ -1,3 +1,22 @@
+### Using a Custom Font (via URL)
+
+You can render quotes with your own font by passing a *publicly accessible* font file URL.
+
+*Parameter:* fontUrl  
+*Supported formats:* .woff2, .woff, .ttf
+
+*Example — Google Fonts (Roboto):*
+![Quote](https://github-readme-quotes-bay.vercel.app/quote?theme=dark&font=Roboto)
+
+### Using a Custom Font (via URL)
+
+Tou can render quotes with your own font by passing a publicly accessible font file URL.
+
+*Example with Poppins font:*
+
+<img src="https://github-readme-quotes.vercel.app/quote?theme=light&font=Poppins" alt="Custom Font Quote"/>
+
+
 <p align="center">
   <img align="center" width="20%" src="assets/uiScreen.gif" alt="logo"/>
   <h2 align="center">Github Readme Quotes: Dynamic quote generator for your GitHub readmes</h2>
@@ -326,3 +345,16 @@ docker compose -f docker-compose.prod.yml up --build
 If the port is changed, please make sure the `PORT` environment variable and Dockerfile EXPOSE line match accordingly.
 
 <hr>
+
+---
+
+### Troubleshooting: Auto-correct didn’t work
+
+->Sometimes the API can’t auto-correct your author or theme (for example, if there’s a typo or uncommon name).  
+->In that case, you can provide your own custom quote and author manually.
+
+*Example:*
+- quote ->  Stay Motivated(URL-encoded, spaces as %20)  
+- author -> mohdayaan123  
+- theme -> any theme name you want  
+- autocorrect=0 → disables auto-correct so it uses your exact input
