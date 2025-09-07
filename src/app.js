@@ -6,9 +6,13 @@ const morgan = require("morgan");
 const path = require("path");
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const cors = require("cors")
 
 const initiateServer = async () => {
   const app = express();
+
+
+  app.use(cors())
 
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
@@ -28,6 +32,7 @@ const initiateServer = async () => {
 
   // Serve SwaggerUi docs
   await swaggerDocs(app);
+
   app.use(express.static(__dirname));
 
   app.listen(port, () =>

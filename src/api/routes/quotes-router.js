@@ -122,6 +122,9 @@ const defineRoutes = (app) => {
     // get a quote
     app.get('/quote', controllers.quoteController);
 
+    // get Unsplash image url
+    app.get('/image', controllers.imageController)
+
 }
 
 module.exports = defineRoutes;

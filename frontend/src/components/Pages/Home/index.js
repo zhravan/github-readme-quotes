@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Typography, Grid, Tooltip } from '@material-ui/core';
 import TemplateCard from '../../organisms/TemplateCard';
 import { themes, animations, layouts, fonts, colorValues, quoteTypes } from '../../../config/cardTemplate';
@@ -9,10 +9,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     customTooltip: {
-      fontSize: '16px',
-      fontWeight: 'bold'
+        fontSize: '16px',
+        fontWeight: 'bold'
     },
-  });
+});
 
 const Home = () => {
 
@@ -26,6 +26,24 @@ const Home = () => {
     const [quoteType, setQuoteType] = useState("random");
     const [bgSource, setBgSource] = useState(null);
     const [unsplashQuery, setUnsplashQuery] = useState("");
+    const [queryKeyEnter, setQueryKeyEnter] = useState(false);
+    const [imageURL, setImageURL] = useState("")
+
+    useEffect(() => {
+        if (queryKeyEnter || bgSource === "unsplash") {
+            setQueryKeyEnter(true)
+            // Replace host as per runtime environment
+            fetch(`http://localhost:3004/image?unsplashQuery=${unsplashQuery}`).then((res) => {
+                return res.json()
+            }).then((resURL) => {                
+                setImageURL(resURL.url);
+            })
+            setQueryKeyEnter(false)
+        }
+        if (bgSource === null) {
+            setQueryKeyEnter(false)
+        }
+    }, [queryKeyEnter, bgSource])
 
 
     const classes = useStyles();
@@ -128,10 +146,10 @@ const Home = () => {
                 </Grid>
 
                 <Grid item xs={12} sm={6} lg={3}>
-                    <Tooltip 
-                        title="This option only works with the default layout." 
-                        placement="top" 
-                        arrow 
+                    <Tooltip
+                        title="This option only works with the default layout."
+                        placement="top"
+                        arrow
                         classes={{ tooltip: classes.customTooltip }}
                     >
                         <Autocomplete
@@ -181,6 +199,7 @@ const Home = () => {
                         value={unsplashQuery}
                         style={{ width: 300, margin: '0 auto' }}
                         onChange={(event) => setUnsplashQuery(event.target.value)}
+                        onKeyDown={(e) => e.key === "Enter" && setQueryKeyEnter(true)}
                         disabled={bgSource !== 'unsplash'}
                     />
                 </Grid>
@@ -189,7 +208,7 @@ const Home = () => {
 
             <Grid container spacing={4}>
                 <Grid item xs={12} style={{ marginTop: '20px' }}>
-                    <TemplateCard theme={theme} animation={animation} layout={layout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} />
+                    <TemplateCard theme={theme} animation={animation} layout={layout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} isImageSet={queryKeyEnter || bgSource === "unsplash"} imageURL={imageURL} />
                 </Grid>
                 <Grid item xs={12}>
                     <Typography align="center">Other layouts</Typography>
@@ -198,7 +217,7 @@ const Home = () => {
                     layouts.filter((item) => item !== layout).map((restLayout) => {
                         return (
                             <Grid key={restLayout} item xs={12} sm={12} md={6}>
-                                <TemplateCard theme={theme} animation={animation} layout={restLayout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} />
+                                <TemplateCard theme={theme} animation={animation} layout={restLayout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} isImageSet={queryKeyEnter || bgSource === "unsplash"} imageURL={imageURL} />
                             </Grid>
                         )
                     })
