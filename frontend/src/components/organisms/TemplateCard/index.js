@@ -37,7 +37,7 @@ const TemplateCard = (props) => {
   }
 
   const isLayoutDefault = props.layout === 'default';
-  const borderColor = isLayoutDefault && props.borderColor ? props.borderColor : 'rgba(0, 0, 0, 0.2)';
+  const borderColor = isLayoutDefault && props.borderColor ? props.borderColor : 'rgba(0, 0, 0, 0)';
   const isImageSet = props.isImageSet
 
   template.setTheme(theme);

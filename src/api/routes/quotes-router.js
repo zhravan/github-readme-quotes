@@ -113,6 +113,47 @@
  *                 format: binary              
  */
 
+/**
+ * @swagger
+ * paths:
+ *   /image:
+ *     get:
+ *       tags:
+ *         - Image
+ *       description: Returns a URL of an Unsplash image based on the provided query.
+ *       parameters:
+ *         - name: unsplashQuery
+ *           in: query
+ *           required: false
+ *           schema:
+ *             type: string
+ *           description: The search term used to fetch an image from Unsplash.
+ *       responses:
+ *         200:
+ *           description: Successfully retrieved image URL
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   url:
+ *                     type: string
+ *                     format: uri
+ *                     example: https://images.unsplash.com/photo-1606788075760-3e29c4c87a4b
+ *         500:
+ *           description: Internal server error
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   name:
+ *                     type: string
+ *                     example: Error
+ *                   message:
+ *                     type: string
+ *                     example: Something went wrong
+ */
 
 
 const controllers = require('../controllers/quotesController');

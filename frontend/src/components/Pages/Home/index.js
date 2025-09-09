@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Typography, Grid, Tooltip } from '@material-ui/core';
+import { Typography, Grid, Tooltip, CircularProgress } from '@material-ui/core';
 import TemplateCard from '../../organisms/TemplateCard';
 import { themes, animations, layouts, fonts, colorValues, quoteTypes } from '../../../config/cardTemplate';
 import TextField from '@material-ui/core/TextField';
@@ -14,6 +14,23 @@ const useStyles = makeStyles({
     },
 });
 
+// Helper function to convert image URL to base64
+const getBase64FromUrl = async (url) => {
+    try {
+        const response = await fetch(url);
+        const blob = await response.blob();
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(blob);
+        });
+    } catch (error) {
+        console.error('Error converting image to base64:', error);
+        return null;
+    }
+};
+
 const Home = () => {
 
     const [theme, setTheme] = useState(themes[0]);
@@ -27,16 +44,25 @@ const Home = () => {
     const [bgSource, setBgSource] = useState(null);
     const [unsplashQuery, setUnsplashQuery] = useState("");
     const [queryKeyEnter, setQueryKeyEnter] = useState(false);
-    const [imageURL, setImageURL] = useState("")
+    const [isImageLoading, setIsImageLoading] = useState()
+    const [base64Image, setBase64Image] = useState()
 
     useEffect(() => {
         if (queryKeyEnter || bgSource === "unsplash") {
             setQueryKeyEnter(true)
-            // Replace host as per runtime environment
-            fetch(`http://localhost:3004/image?unsplashQuery=${unsplashQuery}`).then((res) => {
+            setIsImageLoading(true)
+            // host is set based on NODE_ENV 
+            fetch(`${process.env.NODE_ENV === "production" ? "https://github-readme-quotes-bay.vercel.app" : "http://localhost:3004"}/image?unsplashQuery=${unsplashQuery}`).then((res) => {
                 return res.json()
-            }).then((resURL) => {                
-                setImageURL(resURL.url);
+            }).then(async (resURL) => {
+
+                // Convert to base64
+                const base64 = await getBase64FromUrl(resURL.url);
+                if (base64) {
+                    setBase64Image(base64);
+                }
+            }).finally(() => {
+                setIsImageLoading(false)
             })
             setQueryKeyEnter(false)
         }
@@ -208,7 +234,13 @@ const Home = () => {
 
             <Grid container spacing={4}>
                 <Grid item xs={12} style={{ marginTop: '20px' }}>
-                    <TemplateCard theme={theme} animation={animation} layout={layout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} isImageSet={queryKeyEnter || bgSource === "unsplash"} imageURL={imageURL} />
+
+                    {isImageLoading ?
+                        <CircularProgress
+                            color="secondary"
+                        /> :
+                        <TemplateCard theme={theme} animation={animation} layout={layout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} isImageSet={queryKeyEnter || bgSource === "unsplash"} imageURL={base64Image} />
+                    }
                 </Grid>
                 <Grid item xs={12}>
                     <Typography align="center">Other layouts</Typography>
@@ -217,7 +249,12 @@ const Home = () => {
                     layouts.filter((item) => item !== layout).map((restLayout) => {
                         return (
                             <Grid key={restLayout} item xs={12} sm={12} md={6}>
-                                <TemplateCard theme={theme} animation={animation} layout={restLayout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} isImageSet={queryKeyEnter || bgSource === "unsplash"} imageURL={imageURL} />
+                                {isImageLoading ?
+                                    <CircularProgress
+                                        color="secondary"
+                                    /> :
+                                    <TemplateCard theme={theme} animation={animation} layout={layout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} isImageSet={queryKeyEnter || bgSource === "unsplash"} imageURL={base64Image} />
+                                }
                             </Grid>
                         )
                     })

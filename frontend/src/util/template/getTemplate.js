@@ -1,16 +1,21 @@
 const getTemplate = (template, url) => {
+  
   const backgroundImageLayer = url
-    ? `<image href="${url}"
-        x="0" y="0"
+    ? `<image
+        href="${url}"
+        x="0"
+        y="0"
         width="700"
         height="${parseInt(template.height)}"
-        preserveAspectRatio="xMidYMid slice" />`
+        style="filter: blur(1px); -webkit-filter: blur(1px);"
+        preserveAspectRatio="xMidYMid slice"
+      />`
     : '';
 
   return `
       <svg width="700px" height="${parseInt(
     template.height
-  )}px" fill="none" xmlns="http://www.w3.org/2000/svg">
+  )}px" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>
           <style>
           @font-face{
