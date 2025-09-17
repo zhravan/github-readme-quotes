@@ -17,7 +17,6 @@
     "nodemon": "^3.0.1"
   },
   "scripts": {
-    "test": "",
     "build": "cd frontend && npm install && npm run build && cd .. && npm install",
     "start": "cd frontend && npm install && npm run build && cd .. && npm install && npm run prod",
     "start-dev": "nodemon -r dotenv/config server.js",
