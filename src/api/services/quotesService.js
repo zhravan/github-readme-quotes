@@ -58,7 +58,7 @@ const getQuote = async (quoteObj) => {
     template.setLayout(layout);
     template.bgImage = bgImageUrl;
 
-    let svg = cardTemplate.generateTemplate(template);
+    let svg = await cardTemplate.generateTemplate(template);
     return svg;
   } catch (error) {
     throw error;
