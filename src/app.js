@@ -28,6 +28,9 @@ const initiateServer = async () => {
       );
     });
   }
+
+
+
   routes(app);
 
   // Serve SwaggerUi docs

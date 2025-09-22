@@ -14,14 +14,20 @@
     "swagger-ui-express": "^4.4.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "@types/jest": "^29.5.8"
   },
   "scripts": {
     "build": "cd frontend && npm install && npm run build && cd .. && npm install",
     "start": "cd frontend && npm install && npm run build && cd .. && npm install && npm run prod",
     "start-dev": "nodemon -r dotenv/config server.js",
     "prod": "NODE_ENV=PRODUCTION node -r dotenv/config server.js",
-    "dev": "NODE_ENV=DEVELOPMENT nodemon -r dotenv/config server.js"
+    "dev": "NODE_ENV=DEVELOPMENT nodemon -r dotenv/config server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
