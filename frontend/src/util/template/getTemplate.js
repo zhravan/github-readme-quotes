@@ -1,8 +1,21 @@
-const getTemplate = (template) => {
-    return `
+const getTemplate = (template, url) => {
+  
+  const backgroundImageLayer = url
+    ? `<image
+        href="${url}"
+        x="0"
+        y="0"
+        width="700"
+        height="${parseInt(template.height)}"
+        style="filter: blur(1px); -webkit-filter: blur(1px);"
+        preserveAspectRatio="xMidYMid slice"
+      />`
+    : '';
+
+  return `
       <svg width="700px" height="${parseInt(
-        template.height
-      )}px" fill="none" xmlns="http://www.w3.org/2000/svg">
+    template.height
+  )}px" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>
           <style>
           @font-face{
@@ -11,6 +24,7 @@ const getTemplate = (template) => {
           }
           </style>
       </defs>
+      ${backgroundImageLayer}
       <foreignObject width="100%" height="100%">
           <div xmlns="http://www.w3.org/1999/xhtml">
               <style>
@@ -20,6 +34,6 @@ const getTemplate = (template) => {
           </div>
       </foreignObject>
       </svg>`;
-  };
-  
+};
+
 export default getTemplate;

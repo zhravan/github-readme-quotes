@@ -3,6 +3,11 @@
   <h2 align="center">Github Readme Quotes: Dynamic quote generator for your GitHub readmes</h2>
 </p>
 
+<div align="center">
+    <a href="https://discord.gg/JCKzJcb24r"> Join our discord community </a>
+</div>
+<br><br>
+
 ![banner](./assets/README.png)
 
 ![alt](https://img.shields.io/badge/license-MIT-green?logo=dark-green) ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-success) ![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github) [![GitHub contributors](https://img.shields.io/github/contributors/zhravan/github-readme-quotes.svg)](https://github.com/zhravan/github-readme-quotes/graphs/contributors) ![Pull Request Counts](https://img.shields.io/bitbucket/pr/zhravan/github-readme-quotes) ![last commit](https://img.shields.io/github/last-commit/zhravan/github-readme-quotes) ![deployment-status](https://img.shields.io/website?url=https%3A%2F%2Fgithub-readme-quotes.herokuapp.com%2Fquote) [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/zhravan/github-readme-quotes/)

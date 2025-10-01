@@ -73,6 +73,23 @@ const quoteController = async (req, res, next) => {
   }
 };
 
+const imageController = async (req, res, next) => {
+  try {
+    const responseURL = await quoteService.getUnsplashImage(req.query.unsplashQuery);
+    const escapeHtml = require('escape-html');
+    const safeUrl = escapeHtml(responseURL);
+    res.send({ url: safeUrl });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({
+      name: error.name,
+      message: error.message,
+    });
+  }
+};
+
+
 module.exports = {
-  quoteController
+  quoteController,
+  imageController
 };

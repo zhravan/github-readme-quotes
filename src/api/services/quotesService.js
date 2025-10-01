@@ -67,6 +67,7 @@ const getQuote = async (quoteObj) => {
 
 module.exports = {
   getQuote,
+  getUnsplashImage
 };
 
 const unsplashCache = new Map();

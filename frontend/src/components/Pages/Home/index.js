@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Typography, Grid, Tooltip } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import { Typography, Grid, Tooltip, CircularProgress } from '@material-ui/core';
 import TemplateCard from '../../organisms/TemplateCard';
 import { themes, animations, layouts, fonts, colorValues, quoteTypes } from '../../../config/cardTemplate';
 import TextField from '@material-ui/core/TextField';
@@ -9,10 +9,27 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     customTooltip: {
-      fontSize: '16px',
-      fontWeight: 'bold'
+        fontSize: '16px',
+        fontWeight: 'bold'
     },
-  });
+});
+
+// Helper function to convert image URL to base64
+const getBase64FromUrl = async (url) => {
+    try {
+        const response = await fetch(url);
+        const blob = await response.blob();
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(blob);
+        });
+    } catch (error) {
+        console.error('Error converting image to base64:', error);
+        return null;
+    }
+};
 
 const Home = () => {
 
@@ -26,6 +43,33 @@ const Home = () => {
     const [quoteType, setQuoteType] = useState("random");
     const [bgSource, setBgSource] = useState(null);
     const [unsplashQuery, setUnsplashQuery] = useState("");
+    const [queryKeyEnter, setQueryKeyEnter] = useState(false);
+    const [isImageLoading, setIsImageLoading] = useState()
+    const [base64Image, setBase64Image] = useState()
+
+    useEffect(() => {
+        if (queryKeyEnter || bgSource === "unsplash") {
+            setQueryKeyEnter(true)
+            setIsImageLoading(true)
+            // host is set based on NODE_ENV 
+            fetch(`${process.env.NODE_ENV === "production" ? "https://github-readme-quotes-bay.vercel.app" : "http://localhost:3004"}/image?unsplashQuery=${unsplashQuery}`).then((res) => {
+                return res.json()
+            }).then(async (resURL) => {
+
+                // Convert to base64
+                const base64 = await getBase64FromUrl(resURL.url);
+                if (base64) {
+                    setBase64Image(base64);
+                }
+            }).finally(() => {
+                setIsImageLoading(false)
+            })
+            setQueryKeyEnter(false)
+        }
+        if (bgSource === null) {
+            setQueryKeyEnter(false)
+        }
+    }, [queryKeyEnter, bgSource])
 
 
     const classes = useStyles();
@@ -128,10 +172,10 @@ const Home = () => {
                 </Grid>
 
                 <Grid item xs={12} sm={6} lg={3}>
-                    <Tooltip 
-                        title="This option only works with the default layout." 
-                        placement="top" 
-                        arrow 
+                    <Tooltip
+                        title="This option only works with the default layout."
+                        placement="top"
+                        arrow
                         classes={{ tooltip: classes.customTooltip }}
                     >
                         <Autocomplete
@@ -181,6 +225,7 @@ const Home = () => {
                         value={unsplashQuery}
                         style={{ width: 300, margin: '0 auto' }}
                         onChange={(event) => setUnsplashQuery(event.target.value)}
+                        onKeyDown={(e) => e.key === "Enter" && setQueryKeyEnter(true)}
                         disabled={bgSource !== 'unsplash'}
                     />
                 </Grid>
@@ -189,7 +234,13 @@ const Home = () => {
 
             <Grid container spacing={4}>
                 <Grid item xs={12} style={{ marginTop: '20px' }}>
-                    <TemplateCard theme={theme} animation={animation} layout={layout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} />
+
+                    {isImageLoading ?
+                        <CircularProgress
+                            color="secondary"
+                        /> :
+                        <TemplateCard theme={theme} animation={animation} layout={layout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} isImageSet={queryKeyEnter || bgSource === "unsplash"} imageURL={base64Image} />
+                    }
                 </Grid>
                 <Grid item xs={12}>
                     <Typography align="center">Other layouts</Typography>
@@ -198,7 +249,12 @@ const Home = () => {
                     layouts.filter((item) => item !== layout).map((restLayout) => {
                         return (
                             <Grid key={restLayout} item xs={12} sm={12} md={6}>
-                                <TemplateCard theme={theme} animation={animation} layout={restLayout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} />
+                                {isImageLoading ?
+                                    <CircularProgress
+                                        color="secondary"
+                                    /> :
+                                    <TemplateCard theme={theme} animation={animation} layout={layout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} isImageSet={queryKeyEnter || bgSource === "unsplash"} imageURL={base64Image} />
+                                }
                             </Grid>
                         )
                     })

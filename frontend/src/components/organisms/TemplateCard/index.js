@@ -37,15 +37,22 @@ const TemplateCard = (props) => {
   }
 
   const isLayoutDefault = props.layout === 'default';
-  const borderColor = isLayoutDefault && props.borderColor ? props.borderColor : 'rgba(0, 0, 0, 0.2)';
+  const borderColor = isLayoutDefault && props.borderColor ? props.borderColor : 'rgba(0, 0, 0, 0)';
+  const isImageSet = props.isImageSet
 
   template.setTheme(theme);
+  template.setIsImageSet(isImageSet);
   template.setData(data);
   template.setFont(mainFonts[props.font]);
   template.setAnimation(mainAnimations[props.animation]);
   template.setBorderColor(borderColor);
   template.setLayout(mainLayouts[props.layout]);
-  const file = new Blob([getTemplate(template)], { type: "image/svg+xml" });
+
+  let imgUrl = null;
+  if (isImageSet) {
+    imgUrl = props.imageURL;
+  }
+  const file = new Blob([getTemplate(template, imgUrl)], { type: "image/svg+xml" });
   const url = URL.createObjectURL(file);
 
   const copyToClipboard = async () => {

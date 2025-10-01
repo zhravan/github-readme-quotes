@@ -6,6 +6,10 @@ class Template {
     this.theme = theme;
   }
 
+  setIsImageSet(option) {
+    this.img = option;
+  }
+
   setData(data) {
     this.quote = data.quote;
     this.author = data.author;
@@ -34,7 +38,7 @@ class Template {
     this.structure = structure(this);
   }
 
-  setFont(font){
+  setFont(font) {
     this.font = font;
   }
 
