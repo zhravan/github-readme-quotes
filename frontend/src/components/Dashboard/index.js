@@ -14,7 +14,6 @@ import MoonIcon from '../../assets/moon.svg';
 import LightIcon from '../../assets/sun.svg';
 import Home from '../Pages/Home';
 import DiscordButton from './discord';
-import styleNav from '../../styles/styleNav.css'
 import { FaProductHunt } from "react-icons/fa";
 const ElevationScroll = (props) => {
     const { children, window } = props;

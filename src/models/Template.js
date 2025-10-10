@@ -1,8 +1,7 @@
 const layouts = require("../layouts/layout");
-
 class Template {
   constructor() {}
-
+  
   setTheme(theme) {
     this.theme = theme;
   }

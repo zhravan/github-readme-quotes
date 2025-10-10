@@ -58,6 +58,7 @@ const ContributorsCard = () => {
         margin:"10px",
         justifyContent: "center",
         alignItems: "center",
+        textAlign:"center",
       }}
     >
       <Card raised className={classes.root}>
@@ -72,7 +73,8 @@ const ContributorsCard = () => {
           <Typography className={classes.pos} color="textSecondary">
             To our {listOfContributors.length} contributors for helping in
             <br />
-            bringing this project to life              
+            <br />
+            Bringing this project to life              
           </Typography>
 
           <div style={{display:'flex',alignItems:'center'}}>
@@ -88,7 +90,7 @@ const ContributorsCard = () => {
         </CardContent>
         <CardActions>
           <a style={{textDecoration:"none"}}  href="https://github.com/zhravan/github-readme-quotes/graphs/contributors">
-          <Button variant="contained" color="primary" size="small">More Details Here</Button>
+          <Button variant="contained" color="primary" size="small" style={{marginLeft:"40px"}}>Click Here For More Details Here</Button>
           </a>
         </CardActions>
       </Card>

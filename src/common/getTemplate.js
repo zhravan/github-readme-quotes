@@ -8,7 +8,6 @@ const getTemplate = (template) => {
         height="${parseInt(template.height)}"
         preserveAspectRatio="xMidYMid slice" />`
     : '';
-
   return `
     <svg width="700px" height="${parseInt(
       template.height
@@ -16,7 +15,7 @@ const getTemplate = (template) => {
     <defs>
       <style>
       @font-face{
-        font-family: "customFont";
+        font-family: "cursive";
         src: ${template.font.src}
       }
       </style>
