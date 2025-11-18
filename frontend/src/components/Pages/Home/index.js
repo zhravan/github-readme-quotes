@@ -77,7 +77,7 @@ const Home = () => {
     return (
         <React.Fragment>
 
-            <marquee style={{ padding: '10px', borderRadius: '10px', width: '80%', margin: 'auto', textAlign: 'center' }}>
+            <marquee style={{ display: 'block', padding: '10px', borderRadius: '10px', width: '80%', margin: 'auto', textAlign: 'center' }}>
                 <Typography variant='h6' align='center' component='h4' style={{ margin: '20px', padding: '25px', color: '#6e45e2', fontFamily: 'Arial, sans-serif' }}>
                     🚀 After migrating to Vercel, our application now has separate UI and server deployments for PRODUCTION, while still maintaining server-side rendering locally for DEVELOPMENT. 🚀
                 </Typography>
@@ -96,7 +96,7 @@ const Home = () => {
                         id="theme"
                         options={themes}
                         value={theme}
-                        style={{ width: 300, margin: '0 auto' }}
+                        style={{margin: '0 auto' }}
                         onChange={(_event, newValue) => {
                             if (newValue != null)
                                 setTheme(newValue)
@@ -113,7 +113,7 @@ const Home = () => {
                             if (newValue != null)
                                 setLayout(newValue)
                         }}
-                        style={{ width: 300, margin: '0 auto' }}
+                        style={{margin: '0 auto' }}
                         renderInput={(params) => <TextField {...params} label="Layout" variant="outlined" />}
                     />
                 </Grid>
@@ -126,7 +126,7 @@ const Home = () => {
                             if (newValue != null)
                                 setAnimation(newValue)
                         }}
-                        style={{ width: 300, margin: '0 auto' }}
+                        style={{margin: '0 auto' }}
                         renderInput={(params) => <TextField {...params} label="Animation" variant="outlined" />}
                     />
 
@@ -137,7 +137,7 @@ const Home = () => {
                         id="font"
                         options={fonts}
                         value={font}
-                        style={{ width: 300, margin: '0 auto' }}
+                        style={{margin: '0 auto' }}
                         onChange={(_event, newValue) => {
                             if (newValue != null)
                                 setFont(newValue)
@@ -151,7 +151,7 @@ const Home = () => {
                         id="font-color"
                         options={colorValues}
                         value={fontColor}
-                        style={{ width: 300, margin: '0 auto' }}
+                        style={{margin: '0 auto' }}
                         onChange={(_event, newValue) => {
                             setFontColor(newValue)
                         }}
@@ -163,7 +163,7 @@ const Home = () => {
                         id="bg-color"
                         options={colorValues}
                         value={bgColor}
-                        style={{ width: 300, margin: '0 auto' }}
+                        style={{margin: '0 auto' }}
                         onChange={(_event, newValue) => {
                             setBgColor(newValue)
                         }}
@@ -182,7 +182,7 @@ const Home = () => {
                             id="border-color"
                             options={colorValues}
                             value={borderColor}
-                            style={{ width: 300 }}
+                            style={{margin: '0 auto'}}
                             onChange={(_event, newValue) => {
                                 setBorderColor(newValue)
                             }}
@@ -196,7 +196,7 @@ const Home = () => {
                         id="quote-type"
                         options={quoteTypes}
                         value={quoteType}
-                        style={{ width: 300, margin: '0 auto' }}
+                        style={{margin: '0 auto' }}
                         onChange={(_event, newValue) => {
                             if (newValue != null)
                                 setQuoteType(newValue)
@@ -210,7 +210,7 @@ const Home = () => {
                         id="bg-source"
                         options={['unsplash']}
                         value={bgSource}
-                        style={{ width: 300, margin: '0 auto' }}
+                        style={{margin: '0 auto' }}
                         onChange={(_event, newValue) => {
                             setBgSource(newValue);
                         }}
@@ -223,7 +223,7 @@ const Home = () => {
                         label="Unsplash query"
                         variant="outlined"
                         value={unsplashQuery}
-                        style={{ width: 300, margin: '0 auto' }}
+                        style={{ width: '100%' }}
                         onChange={(event) => setUnsplashQuery(event.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && setQueryKeyEnter(true)}
                         disabled={bgSource !== 'unsplash'}
