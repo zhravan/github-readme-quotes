@@ -5,7 +5,7 @@ const Template = require("../../models/Template");
 const getValidUrl = require("../../utils/validateUrl");
 const quoteFromCategory = require('../../../customQuotes/category.json');
 
-getQuoteIndex = (apiResponseLength, quoteType) => {
+const getQuoteIndex = (apiResponseLength, quoteType) => {
   // Determine the quote index
   let today = new Date();
   let epoch = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime() / 1000
