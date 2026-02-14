@@ -72,7 +72,7 @@ const themes = {
     "dark": {
       quote_color: "#fff",
       author_color: "#9f9f9f",
-      bg_color: "#151515",
+      bg_color: "#161B22",
     },
     "default": {
       quote_color: "#2f80ed",
