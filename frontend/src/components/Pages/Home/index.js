@@ -250,7 +250,7 @@ const Home = () => {
                         <CircularProgress
                             color="secondary"
                         /> :
-                        <TemplateCard theme={theme} animation={animation} layout={layout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} isImageSet={queryKeyEnter || bgSource === "unsplash"} imageURL={base64Image} />
+                        <TemplateCard theme={theme} animation={animation} layout={restLayout} font={font} fontColor={fontColor} bgColor={bgColor} borderColor={borderColor} quoteType={quoteType} bgSource={bgSource} unsplashQuery={unsplashQuery} isImageSet={queryKeyEnter || bgSource === "unsplash"} imageURL={base64Image} />
                     }
                 </Grid>
                 <Grid item xs={12}>
