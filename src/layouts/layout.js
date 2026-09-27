@@ -416,6 +416,204 @@ const layouts = {
         `;
     },
   },
+
+  minimal: {
+    style: (template) => `
+      .minimal-quote {
+        min-width: 600px;
+        padding: 38px 44px;
+        font-family: customFont, Arial, Helvetica, sans-serif;
+        background: ${template.theme.bg_color};
+        color: ${template.theme.quote_color};
+        border-left: 6px solid ${template.theme.author_color};
+        ${template.animation.animation};
+      }
+      ${template.animation.keyframes}
+      .minimal-quote .quote {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.5;
+        letter-spacing: .2px;
+      }
+      .minimal-quote .author {
+        margin-top: 18px;
+        color: ${template.theme.author_color};
+        font-size: 14px;
+        font-style: italic;
+        text-align: right;
+      }`,
+    structure: (template) => `
+      <div class="minimal-quote">
+        <div class="quote">${template.quote}</div>
+        <div class="author">— ${template.author === "Unknown" ? "Anonymous" : template.author}</div>
+      </div>`,
+  },
+  terminal: {
+    style: (template) => `
+      .terminal {
+        min-width: 600px;
+        overflow: hidden;
+        border-radius: 10px;
+        font-family: customFont, Arial, Helvetica, sans-serif;
+        background: ${template.theme.bg_color};
+        border: 1px solid ${template.theme.author_color};
+        ${template.animation.animation};
+      }
+      ${template.animation.keyframes}
+      .terminal .bar {
+        padding: 9px 14px;
+        background: ${template.theme.author_color};
+        color: ${template.theme.bg_color};
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      .terminal .prompt {
+        padding: 24px 28px 8px;
+        color: ${template.theme.author_color};
+        font-size: 14px;
+      }
+      .terminal .quote {
+        padding: 0 28px 12px;
+        color: ${template.theme.quote_color};
+        font-size: 18px;
+        line-height: 1.5;
+      }
+      .terminal .author {
+        padding: 0 28px 24px;
+        color: ${template.theme.author_color};
+        font-size: 13px;
+      }`,
+    structure: (template) => `
+      <div class="terminal">
+        <div class="bar">QUOTE.EXE</div>
+        <div class="prompt">$ quote --show</div>
+        <div class="quote">${template.quote}</div>
+        <div class="author"># ${template.author === "Unknown" ? "Anonymous" : template.author}</div>
+      </div>`,
+  },
+  neon: {
+    style: (template) => `
+      .neon {
+        min-width: 600px;
+        padding: 34px;
+        font-family: customFont, Arial, Helvetica, sans-serif;
+        background: ${template.theme.bg_color};
+        border: 2px solid ${template.theme.author_color};
+        box-shadow: 0 0 10px ${template.theme.author_color}, inset 0 0 18px ${template.theme.author_color};
+        ${template.animation.animation};
+      }
+      ${template.animation.keyframes}
+      .neon .quote {
+        margin: 0;
+        color: ${template.theme.quote_color};
+        font-size: 20px;
+        line-height: 1.55;
+        text-align: center;
+        text-shadow: 0 0 6px ${template.theme.quote_color};
+      }
+      .neon .author {
+        margin-top: 20px;
+        color: ${template.theme.author_color};
+        font-size: 14px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }`,
+    structure: (template) => `
+      <div class="neon">
+        <div class="quote">“ ${template.quote} ”</div>
+        <div class="author">${template.author === "Unknown" ? "Anonymous" : template.author}</div>
+      </div>`,
+  },
+  newspaper: {
+    style: (template) => `
+      .newspaper {
+        min-width: 600px;
+        padding: 30px 38px;
+        font-family: customFont, Georgia, serif;
+        background: ${template.theme.bg_color};
+        color: ${template.theme.quote_color};
+        border-top: 4px double ${template.theme.author_color};
+        border-bottom: 4px double ${template.theme.author_color};
+        ${template.animation.animation};
+      }
+      ${template.animation.keyframes}
+      .newspaper .masthead {
+        color: ${template.theme.author_color};
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 4px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .newspaper .rule {
+        height: 1px;
+        margin: 12px 0 20px;
+        background: ${template.theme.author_color};
+      }
+      .newspaper .quote {
+        margin: 0;
+        font-size: 21px;
+        line-height: 1.45;
+        text-align: center;
+      }
+      .newspaper .author {
+        margin-top: 16px;
+        color: ${template.theme.author_color};
+        font-size: 13px;
+        text-align: center;
+      }`,
+    structure: (template) => `
+      <div class="newspaper">
+        <div class="masthead">THE DAILY QUOTE</div>
+        <div class="rule"></div>
+        <div class="quote">${template.quote}</div>
+        <div class="author">— ${template.author === "Unknown" ? "Anonymous" : template.author}</div>
+      </div>`,
+  },
+  polaroid: {
+    style: (template) => `
+      .polaroid-wrap {
+        min-width: 600px;
+        padding: 28px;
+        font-family: customFont, Arial, Helvetica, sans-serif;
+        background: ${template.img ? "transparent" : template.theme.bg_color};
+        ${template.animation.animation};
+      }
+      ${template.animation.keyframes}
+      .polaroid {
+        padding: 26px 26px 20px;
+        background: ${template.theme.bg_color};
+        border: 1px solid ${template.borderColor};
+        box-shadow: 8px 8px 0 ${template.theme.author_color};
+        transform: rotate(-1deg);
+      }
+      .polaroid .quote {
+        min-height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: ${template.theme.quote_color};
+        font-size: 19px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      .polaroid .caption {
+        margin-top: 20px;
+        color: ${template.theme.author_color};
+        font-size: 13px;
+        text-align: right;
+        font-style: italic;
+      }`,
+    structure: (template) => `
+      <div class="polaroid-wrap">
+        <div class="polaroid">
+          <div class="quote">${template.quote}</div>
+          <div class="caption">— ${template.author === "Unknown" ? "Anonymous" : template.author}</div>
+        </div>
+      </div>`,
+  },
 };
 
 module.exports = layouts;
