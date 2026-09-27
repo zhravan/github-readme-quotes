@@ -69,7 +69,7 @@ const Home = () => {
         if (bgSource === null) {
             setQueryKeyEnter(false)
         }
-    }, [queryKeyEnter, bgSource])
+    }, [queryKeyEnter, bgSource, unsplashQuery])
 
 
     const classes = useStyles();
@@ -77,11 +77,22 @@ const Home = () => {
     return (
         <React.Fragment>
 
-            <marquee style={{ padding: '10px', borderRadius: '10px', width: '80%', margin: 'auto', textAlign: 'center' }}>
+            <div
+                role="status"
+                aria-label="Deployment information"
+                style={{
+                    padding: '10px',
+                    borderRadius: '10px',
+                    width: '80%',
+                    margin: 'auto',
+                    textAlign: 'center',
+                    overflow: 'hidden',
+                }}
+            >
                 <Typography variant='h6' align='center' component='h4' style={{ margin: '20px', padding: '25px', color: '#6e45e2', fontFamily: 'Arial, sans-serif' }}>
                     🚀 After migrating to Vercel, our application now has separate UI and server deployments for PRODUCTION, while still maintaining server-side rendering locally for DEVELOPMENT. 🚀
                 </Typography>
-            </marquee>
+            </div>
 
             <Typography variant='h5' align='center' component='h2' style={{ margin: '20px', padding: '25px' }}>Make your own personalised style for the Quotes</Typography>
 
