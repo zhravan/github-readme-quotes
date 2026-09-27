@@ -114,6 +114,12 @@ const layouts = {
   },
   churchill: {
     style: (template) => {
+
+      //if background image is provided the titlebackground should be transparent and it should be moved down a bit so it isn't crossing through the borders
+      const titleBackground = template.bgImage ? 'transparent' : 'var(--bg-color)';
+      const titleTopPosition = template.bgImage ? '10px' : '-12px';
+    
+
       return `* {
                 box-sizing: border-box;
               }
@@ -139,12 +145,12 @@ const layouts = {
               .title-container {
                   position: absolute;
                   width: 100%;
-                  top: -12px;
+                  top: ${titleTopPosition};
                   z-index: 1;
               }
 
               .title-container span {
-                  background: var(--bg-color);
+                  background: ${titleBackground};
                   background-size: 600px;
                   background-repeat: no-repeat;
                   background-position: center;
