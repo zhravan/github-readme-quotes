@@ -17,6 +17,18 @@ const animations = {
                             }
                     }`, 
     },
+    
+  text_slide: {
+    animation: `animation:text-slide 2s linear infinite alternate;`,
+    keyframes: `@keyframes text-slide{
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(10px);
+      }
+    }`,
+  },
 };
 
 export default animations;
