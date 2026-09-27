@@ -1,6 +1,5 @@
 import React from 'react';
 import DiscordLogo from '../../assets/discord_logo.png';
-import styleNav from '../../styles/styleNav.css'
 import { FaDiscord } from "react-icons/fa";
 const DiscordButton = () => {
     const discordUrl = 'https://discord.gg/2nN2VqwNaK';
@@ -35,12 +34,11 @@ const DiscordButton = () => {
             </button>
 
             {/* mobile */}
-            <FaDiscord 
+            <FaDiscord
                 onClick={handleDiscordButtonClick}
                 className='discord-sm'
             />
         </>
-        
     );
 };
 
