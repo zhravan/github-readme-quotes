@@ -38,6 +38,12 @@ const quoteController = async (req, res, next) => {
     let quoteType = req.query.quoteType || '';
     let unsplashQuery = req.query.unsplashQuery || '';
 
+    // (Issue #334)
+    const toNum = (v) => (v !== undefined && v !== '' && !Number.isNaN(Number(v))) ? Number(v) : undefined;
+    const fontSize = toNum(req.query.fontSize);
+    const width = toNum(req.query.width);
+    const height = toNum(req.query.height);
+
     let quoteObject = {
       theme,
       animation,
@@ -48,7 +54,10 @@ const quoteController = async (req, res, next) => {
       quoteType,
       borderColor,
       bgSource,
-      unsplashQuery
+      unsplashQuery,
+      fontSize,
+      width,
+      height
     }
 
     let svgResponse = await quoteService.getQuote(quoteObject);

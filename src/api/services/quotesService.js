@@ -15,7 +15,7 @@ getQuoteIndex = (apiResponseLength, quoteType) => {
 const getQuote = async (quoteObj) => {
 
   try {
-    let { theme, animation, layout, quotesUrl, quoteCategory, font, quoteType, borderColor, bgSource, unsplashQuery } = quoteObj;
+    let { theme, animation, layout, quotesUrl, quoteCategory, font, quoteType, borderColor, bgSource, unsplashQuery,fontSize, width,height } = quoteObj;
     let apiResponse;
     let { customQuotesUrl, isValidUrl } = await getValidUrl(quotesUrl);
     let isCustomQuote = false;
@@ -57,6 +57,10 @@ const getQuote = async (quoteObj) => {
     template.setBorderColor(borderColor);
     template.setLayout(layout);
     template.bgImage = bgImageUrl;
+
+    if (Number.isFinite(fontSize)) template.fontSize = Number(fontSize);
+    if (Number.isFinite(width))    template.width    = Number(width);
+    if (Number.isFinite(height))   template.height   = Number(height);
 
     let svg = cardTemplate.generateTemplate(template);
     return svg;

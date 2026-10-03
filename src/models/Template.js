@@ -1,11 +1,16 @@
 const layouts = require("../layouts/layout");
 
 class Template {
-  constructor() {}
+  constructor() {
+    this.width = 500;
+    this.height = 200;
+    this.fontSize = 16;}
 
   setTheme(theme) {
     this.theme = theme;
   }
+
+
 
   setData(data) {
     this.quote = data.quote;
@@ -37,6 +42,17 @@ class Template {
   
   setFont(font){
     this.font = font;
+  }
+  setFontSize(size) {
+    this.fontSize = size;
+  }
+
+  setWidth(width) {
+    this.width = width;
+  }
+
+  setHeight(height) {
+    this.height = height;
   }
 
   calculateHeight(length) {
