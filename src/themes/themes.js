@@ -79,11 +79,6 @@ const themes = {
       author_color: "#333",
       bg_color: "#fffefe",
     },
-    "default_repocard": {
-      quote_color: "#2f80ed",
-      author_color: "#333",
-      bg_color: "#fffefe",
-    },
     "dracula": {
       quote_color: "#ff6e96",
       author_color: "#f8f8f2",

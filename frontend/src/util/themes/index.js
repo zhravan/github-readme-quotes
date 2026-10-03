@@ -4,11 +4,6 @@ const themes = {
       author_color: "#333",
       bg_color: "#fffefe",
     },
-    "default_repocard": {
-      quote_color: "#2f80ed",
-      author_color: "#333",
-      bg_color: "#fffefe",
-    },
     "dark": {
       quote_color: "#fff",
       author_color: "#9f9f9f",
