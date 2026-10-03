@@ -36,14 +36,21 @@ const getQuote = async (quoteObj) => {
       }
     }
     else if (quoteCategory) {
+      if(!quoteFromCategory[quoteCategory]){
+        throw new Error('Invalid quote category')
+      }
       apiResponse = quoteFromCategory[quoteCategory];
+
+      if (apiResponse.length === 0) {
+        throw new Error(`Category "${quoteCategory}" has no quotes available.`);
+      }
+
       apiResponse = apiResponse[Math.floor(getQuoteIndex(apiResponse.length, quoteType))];
       isCustomQuote = true;
     }
     else {
       apiResponse = await requestApi(url);
     }
-
     let bgImageUrl = "";
     if (bgSource === "unsplash") {
       bgImageUrl = await getUnsplashImage(unsplashQuery || 'random');
