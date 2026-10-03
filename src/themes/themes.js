@@ -263,8 +263,72 @@ const themes = {
       quote_color: "#94ff29",
       author_color: "#3aff29",
       bg_color: "url('https://cdn.wallpapersafari.com/90/94/AmZe8I.jpg') center"
-    }
-  };
-  
+    },
+    
+    // ===================================
+    // 10 NEW THEMES ADDED BELOW
+    // ===================================
 
-module.exports=themes;
+    // 1. Popular editor theme
+    "catppuccin-mocha": {
+      quote_color: "#cba6f7", // Mauve
+      author_color: "#a6e3a1", // Green
+      bg_color: "#1e1e2e", // Base
+    },
+    // 2. Another popular editor theme
+    "rose-pine": {
+      quote_color: "#e0d1f7", // Rose Pine Fog
+      author_color: "#9ccfd8", // Rose Pine Aqua
+      bg_color: "#191724", // Rose Pine Base
+    },
+    // 3. Light mode variant
+    "ayu-light": {
+      quote_color: "#86b300", // Ayu Light 'Green'
+      author_color: "#5c6773", // Ayu Light 'Text'
+      bg_color: "#f8f8f8", // Ayu Light 'Background'
+    },
+    // 4. High-contrast, warm colors
+    "fire-opal": {
+      quote_color: "#ff6d00", // Deep Orange/Fire Opal
+      author_color: "#00bfa5", // Teal Accent
+      bg_color: "#1c1c1c", // Dark Gray
+    },
+    // 5. Classic Dark Terminal look
+    "hacker-green": {
+        quote_color: "#00ff41", // Bright Neon Green
+        author_color: "#10c634", // Darker Green
+        bg_color: "#000000",
+    },
+    // 6. Soft Lavender gradient
+    "lavender-dawn": {
+        quote_color: "#4a4e69", // Dark Text
+        author_color: "#9a8c98", // Muted Author
+        bg_color: "linear-gradient(to top right, #f2e9e4, #c9ada7)",
+    },
+    // 7. Azure Blue/Silver
+    "azure": {
+        quote_color: "#3498db", // Bright Azure Blue
+        author_color: "#ecf0f1", // Silver
+        bg_color: "#2c3e50", // Midnight Blue
+    },
+    // 8. Elegant sepia-toned light theme
+    "old-book": {
+        quote_color: "#5b4a3a", // Dark Brown Text
+        author_color: "#8a735a", // Sepia Text
+        bg_color: "#fff8e1", // Off-White/Cream
+    },
+    // 9. Retro-futuristic dark neon
+    "neon-blaze": {
+        quote_color: "#ff0099", // Neon Pink
+        author_color: "#00ffff", // Neon Cyan
+        bg_color: "#0a0a0a",
+    },
+    // 10. Earthy and muted
+    "forest-path": {
+        quote_color: "#4a7c59", // Deep Forest Green
+        author_color: "#a8dadc", // Light Blue/Sky
+        bg_color: "#373b3e", // Slate Gray
+    },
+};
+
+module.exports = themes;
